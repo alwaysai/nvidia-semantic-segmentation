@@ -1,4 +1,3 @@
-import time
 import edgeiq
 """
 Use semantic segmentation to determine a class for each pixel of an image.
