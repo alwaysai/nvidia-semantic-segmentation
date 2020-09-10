@@ -2,16 +2,17 @@ import edgeiq
 """
 Use semantic segmentation to determine a class for each pixel of an image.
 The classes of objects detected can be changed by selecting different models.
-This particular starter application uses a model trained on the Pascal VOC dataset
-(http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html).
+This particular starter application uses a model trained on the Pascal VOC
+dataset (http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html).
 
 To change the computer vision model, follow this guide:
-https://dashboard.alwaysai.co/docs/application_development/changing_the_model.html
+https://alwaysai.co/docs/application_development/changing_the_model.html
 
 To change the engine and accelerator, follow this guide:
-https://dashboard.alwaysai.co/docs/application_development/changing_the_engine_and_accelerator.html
+https://alwaysai.co/docs/application_development/changing_the_engine_and_accelerator.html
 
-To install app dependencies in the runtime container, list them in the requirements.txt file.
+To install app dependencies in the runtime container, list them in the
+requirements.txt file.
 """
 
 
@@ -27,8 +28,10 @@ def main():
     fps = edgeiq.FPS()
 
     try:
-        with edgeiq.FileVideoStream('toronto.mp4', play_realtime=True) as video_stream, \
-                edgeiq.Streamer() as streamer:  # play_realtime simulates video feed from a camera
+        # Simulate a real-time video stream with `play_realtime`
+        with edgeiq.FileVideoStream(
+            'toronto.mp4', play_realtime=True) as video_stream, \
+                edgeiq.Streamer() as streamer:
             fps.start()
 
             # loop detection
