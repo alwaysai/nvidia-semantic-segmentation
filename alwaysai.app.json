@@ -3,6 +3,6 @@
     "start": "python app.py"
   },
   "models": {
-    "alwaysai/enet": 1
+    "alwaysai/enet": 2
   }
 }
